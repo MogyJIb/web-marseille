@@ -1,0 +1,168 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Marseille</title>
+    <style type="text/css">
+        body {
+            background-color: rgba(247, 247, 247, 0.1);
+        }
+
+        div.cart {
+            background-color: white;
+            margin: auto;
+            width: 600px;
+        }
+
+        table {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
+        td {
+            font: bold 16px debby;
+            padding: 0px;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        input.buttonCount, .buttonDelete {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        input.numberCount {
+            border: 0px;
+            width: 20px;
+            text-align: center;
+        }
+
+        td.productPrice {
+            font: 16px debby;
+        }
+
+
+        div.totalPrice {
+            text-align: right;
+            font: bold 20px debby;
+        }
+
+        form {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        div.input {
+            text-align: left;
+        }
+
+        input.name, .email, .phone {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        input:focus {
+            border: 1px solid white;
+        }
+
+        button.cancel, .next {
+            color: white;
+            font-weight: bold;
+            border: 5px solid #f64ca2;
+            border-radius: 20px;
+            background-color: black;
+            padding: 10px;
+            width: 150px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="cart">
+    <div class="goods">
+        <table>
+            <tr>
+                <td>
+                    <img src="https://static.tildacdn.com/tild6363-6230-4336-b734-613235323462/kuracja-energetyzuja.jpg">
+                </td>
+                <td>
+                    Energizing blend scalp treatment
+                </td>
+                <td>
+                    <input type="button" value="&ndash;" class="buttonCount">
+                    <input type="text" value="1" class="numberCount">
+                    <input type="button" value="+" class="buttonCount">
+                </td>
+                <td class="productPrice">
+                    32BYN
+                </td>
+                <td>
+                    <input type="button" value="Х" class="buttonDelete">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="https://static.tildacdn.com/tild6439-3532-4463-b133-353861396433/img_2018-09-03_17-36.jpg">
+                </td>
+                <td>
+                    Energizing blend conditioner
+                </td>
+                <td>
+                    <input type="button" value="&ndash;" class="buttonCount">
+                    <input type="text" value="1" class="numberCount">
+                    <input type="button" value="+" class="buttonCount">
+                </td>
+                <td class="productPrice">
+                    32BYN
+                </td>
+                <td>
+                    <input type="button" value="Х" class="buttonDelete">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="totalPrice">
+        Сумма: 317BYN
+    </div>
+
+    <form>
+        <div class="input">
+            <div>
+                <label for="name">Имя</label>
+                <input type="text" class="name" required></input>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" class="email" required></input>
+            </div>
+            <div>
+                <label for="phone">Телефон</label>
+                <input type="text" class="phone" required></input>
+            </div>
+        </div>
+        <div>
+            <button class="cancel">Отмена</button>
+            <button class="next">Продолжить</button>
+        </div>
+    </form>
+
+
+</div>
+
+
+
+
+</body>
+</html>

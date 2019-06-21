@@ -1,0 +1,256 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Marseille</title>
+
+  <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <link href="lib/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" />
+  <script src="lib/jquery-ui/jquery-ui.js"></script>
+  <script src="lib/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+    <script src="lib/map.js"></script>
+
+
+  <script src="goods_scripts.js"></script>
+
+
+  <style type="text/css">
+
+    div.cartIcon {
+      position: fixed;
+      right: 20px;
+      padding-top: 20px;
+    }
+
+    button.cartIcon {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50px;
+      background-color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 40px;
+      border: 0px;
+      padding: 0px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      cursor: pointer;
+    }
+
+    div.category {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(247, 247, 247, 1)), url(https://static.tildacdn.com/tild3163-6639-4461-a431-383034376361/_.png);
+      height: 500px;
+      text-align: center;
+      color: white;
+    }
+
+    div.categoryName {
+      font: bold italic 50px debby;
+      padding-top: 200px;
+    }
+
+    div.categoryDescription {
+      font: italic 30px debby;
+    }
+
+    div.goods {
+      background-color: rgb(247, 247, 247);
+    }
+
+    table {
+      border: 0px;
+    }
+
+    td {
+      padding: 30px;
+    }
+
+    img {
+      width: 300px;
+    }
+
+    div.name {
+      font: bold italic 20px debby;
+    }
+    div.description {
+      font: italic 20px debby;
+    }
+    div.price {
+      font: bold 20px debby;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    div.ingredients {
+      font: bold italic 20px debby;
+    }
+    div.formats {
+      font: bold italic 20px debby;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    div.use {
+      font: italic 20px debby;
+      padding-bottom: 20px;
+    }
+
+    button.toOrder {
+      color: white;
+      font-weight: bold;
+      border: 5px solid #f64ca2;
+      border-radius: 20px;
+      background-color: black;
+      padding: 10px;
+      width: 150px;
+    }
+
+    div.cart {
+      background-color: white;
+      margin: auto;
+      width: 600px;
+    }
+
+    table.cartTable {
+      margin: auto;
+      width: 100%;
+      text-align: center;
+    }
+    td.cartTd  {
+      font: bold 16px debby;
+      padding: 0px;
+    }
+
+    img.cartImg {
+      width: 100px;
+    }
+
+    input.buttonCount, .buttonDelete {
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    input.numberCount {
+      border: 0px;
+      width: 20px;
+      text-align: center;
+    }
+
+    td.productPrice {
+      font: 16px debby;
+      padding: 0px;
+    }
+
+    div.totalPrice {
+      text-align: right;
+      font: bold 20px debby;
+    }
+
+    form {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    div.input {
+      text-align: left;
+    }
+
+    input.name, .email, .phone {
+      width: 100%;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+    }
+
+    input:focus {
+      border: 1px solid white;
+    }
+
+    button.cancel, .next {
+      color: white;
+      font-weight: bold;
+      border: 5px solid #f64ca2;
+      border-radius: 20px;
+      background-color: black;
+      padding: 10px;
+      width: 150px;
+      margin-top: 20px;
+    }
+
+    .ui-widget.cartDialog {
+      font-family: Verdana,Arial,sans-serif;
+      font-size: .8em;
+    }
+
+    .ui-widget-content.cartDialog {
+      background: #F9F9F9;
+      border: 1px solid rgba(144, 217, 63, 0);
+      color: #222222;
+    }
+
+    .ui-dialog.cartDialog {
+      left: 0;
+      outline: 0 none;
+      padding: 0 !important;
+      position: absolute;
+      top: 0;
+    }
+
+    .ui-dialog.cartDialog .ui-dialog-content {
+      background: none repeat scroll 0 0 transparent;
+      border: 0 none;
+      overflow: auto;
+      position: relative;
+      padding: 0 !important;
+      margin: 0;
+    }
+
+    .ui-dialog.cartDialog .ui-widget-header {
+      background: rgba(176, 222, 120, 0);
+      border: 0;
+      color: rgba(255, 255, 255, 0);
+      font-weight: normal;
+    }
+
+    .ui-dialog.cartDialog .ui-dialog-titlebar {
+      padding: 0.1em .5em;
+      position: relative;
+      font-size: 1em;
+    }
+
+    .ui-widget-overlay.override {
+      background: repeat-x scroll 50% 50% #222222;
+      opacity:0.5;
+      filter:Alpha(Opacity=50);
+    }
+
+
+  </style>
+</head>
+
+<body>
+<div class="category">
+  <div class="cartIcon">
+    <button class="cartIcon" onclick="cartClick()"></button>
+  </div>
+  <div class="categoryName">
+    MILK SHAKE
+  </div>
+  <div class="categoryDescription">
+    Италия. Натуральная косметика за основу которой взяты молочные протеины, аминокислоты йогурта и фруктовые экстракты
+  </div>
+</div>
+
+<div id="goods_table_div" class="goods">
+  <table>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+
+  getGoods()
+</script>
+
+</body>
+</html>
