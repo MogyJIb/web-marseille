@@ -4,7 +4,7 @@ var cart = new Map();
 
 function getGoods() {
     $.ajax({
-        url: '/marseillle_web_war_exploded/goods',
+        url: '/goods',
         type: 'GET',
         contentType: "application/json",
         success: function (goodsList) {
@@ -67,6 +67,14 @@ function updateTotalPrice() {
     totalPrice.innerText = amount + "";
 }
 
+function cancelDialog() {
+    $(this).closest('.ui-dialog-content').dialog('close');
+}
+
+function nextDialog() {
+    $(this).closest('.ui-dialog-content').dialog('close');
+    alert("Данные успешно отправлены")
+}
 
 
 var row = function (good) {
@@ -78,7 +86,7 @@ var row = function (good) {
         "<td>" +
         "<div class=\"name\">" + good.name + "</div>" +
         "<div class=\"description\">" + good.description +"</div>" +
-        "<div class=\"price\">" + good.price + "</div>" +
+        "<div class=\"price\">" + good.price + " BYN</div>" +
         "<div class=\"ingredients\">" + good.ingredients + "</div>" +
         "<div class=\"formats\">" + good.formats + "</div>" +
         "<div class=\"use\">" + good.use + "</div>" +
@@ -105,7 +113,7 @@ var cartRow = function (cartV) {
         '    </td>\n' +
         '    <td class="productPrice">\n' +
         good.price +
-        '    </td>\n' +
+        ' BYN    </td>\n' +
         '    <td class="cartTd">\n' +
         '        <input type="button" value="Х" class="buttonDelete" onclick="deleteGoods(\''+name+'\')">\n' +
         '    </td>\n' +
@@ -139,20 +147,20 @@ function cartClick() {
         '        <div class="input">\n' +
         '            <div>\n' +
         '                <label for="name">Имя</label>\n' +
-        '                <input type="text" class="name" required></input>\n' +
+        '                <input type="text" class="name" ></input>\n' +
         '            </div>\n' +
         '            <div>\n' +
         '                <label for="email">Email</label>\n' +
-        '                <input type="email" class="email" required></input>\n' +
+        '                <input type="email" class="email" ></input>\n' +
         '            </div>\n' +
         '            <div>\n' +
         '                <label for="phone">Телефон</label>\n' +
-        '                <input type="text" class="phone" required></input>\n' +
+        '                <input type="text" class="phone" ></input>\n' +
         '            </div>\n' +
         '        </div>\n' +
         '        <div>\n' +
-        '            <button class="cancel">Отмена</button>\n' +
-        '            <button class="next">Продолжить</button>\n' +
+        '            <button class="cancel" onclick="cancelDialog()">Отмена</button>\n' +
+        '            <button class="next" onclick="nextDialog()">Продолжить</button>\n' +
         '        </div>\n' +
         '    </form>\n' +
         '\n' +
