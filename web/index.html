@@ -1,256 +1,281 @@
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Marseille</title>
+    <meta charset="utf-8" />
+    <title>Marseille</title>
 
-  <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <link href="lib/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" />
-  <script src="lib/jquery-ui/jquery-ui.js"></script>
-  <script src="lib/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <link href="lib/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <script src="lib/jquery-ui/ui/i18n/datepicker-ru.js"></script>
     <script src="lib/map.js"></script>
 
 
-  <script src="goods_scripts.js"></script>
+    <script src="goods_scripts.js"></script>
 
 
-  <style type="text/css">
+    <style type="text/css">
 
-    div.cartIcon {
-      position: fixed;
-      right: 20px;
-      padding-top: 20px;
-    }
+        div.cartIcon {
+            position: fixed;
+            right: 20px;
+            padding-top: 20px;
+        }
 
-    button.cartIcon {
-      background: url("cart_icon.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 50px;
-      background-color: white;
-      width: 70px;
-      height: 70px;
-      border-radius: 40px;
-      border: 0px;
-      padding: 0px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-      cursor: pointer;
-    }
+        button.cartIcon {
+            background: url(cart_icon.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50px;
+            background-color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 40px;
+            border: 0px;
+            padding: 0px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            cursor: pointer;
+            outline:none;
+        }
 
-    div.category {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(247, 247, 247, 1)), url(https://static.tildacdn.com/tild3163-6639-4461-a431-383034376361/_.png);
-      height: 500px;
-      text-align: center;
-      color: white;
-    }
+        div.category {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(247, 247, 247, 1)), url(https://static.tildacdn.com/tild3163-6639-4461-a431-383034376361/_.png);
+            height: 500px;
+            text-align: center;
+            color: white;
+        }
 
-    div.categoryName {
-      font: bold italic 50px debby;
-      padding-top: 200px;
-    }
+        div.categoryName {
+            font: bold italic 50px debby;
+            padding-top: 200px;
+        }
 
-    div.categoryDescription {
-      font: italic 30px debby;
-    }
+        div.categoryDescription {
+            font: italic 30px debby;
+        }
 
-    div.goods {
-      background-color: rgb(247, 247, 247);
-    }
+        div.goods {
+            background-color: rgb(247, 247, 247);
+        }
 
-    table {
-      border: 0px;
-    }
+        table {
+            border: 0px;
+        }
 
-    td {
-      padding: 30px;
-    }
+        td {
+            padding: 30px;
+        }
 
-    img {
-      width: 300px;
-    }
+        td.cartTd {
+            padding: 0px;
+        }
 
-    div.name {
-      font: bold italic 20px debby;
-    }
-    div.description {
-      font: italic 20px debby;
-    }
-    div.price {
-      font: bold 20px debby;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    div.ingredients {
-      font: bold italic 20px debby;
-    }
-    div.formats {
-      font: bold italic 20px debby;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    div.use {
-      font: italic 20px debby;
-      padding-bottom: 20px;
-    }
+        img {
+            width: 300px;
+        }
 
-    button.toOrder {
-      color: white;
-      font-weight: bold;
-      border: 5px solid #f64ca2;
-      border-radius: 20px;
-      background-color: black;
-      padding: 10px;
-      width: 150px;
-    }
+        div.name {
+            font: bold italic 20px debby;
+        }
+        div.description {
+            font: italic 20px debby;
+        }
+        div.price {
+            font: bold 20px debby;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        div.ingredients {
+            font: bold italic 20px debby;
+        }
+        div.formats {
+            font: bold italic 20px debby;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        div.use {
+            font: italic 20px debby;
+            padding-bottom: 20px;
+        }
 
-    div.cart {
-      background-color: white;
-      margin: auto;
-      width: 600px;
-    }
+        button.toOrder {
+            color: white;
+            font-weight: bold;
+            border: 5px solid #f64ca2;
+            border-radius: 20px;
+            background-color: black;
+            padding: 10px;
+            width: 150px;
+            outline:none;
+            cursor: pointer;
+        }
 
-    table.cartTable {
-      margin: auto;
-      width: 100%;
-      text-align: center;
-    }
-    td.cartTd  {
-      font: bold 16px debby;
-      padding: 0px;
-    }
+        button.toOrder:focus {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
 
-    img.cartImg {
-      width: 100px;
-    }
+        div.cart {
+            margin: auto;
+            width: 600px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-    input.buttonCount, .buttonDelete {
-      background-color: white;
-      border: 1px solid black;
-      border-radius: 20px;
-      cursor: pointer;
-    }
+        table.cartTable {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
 
-    input.numberCount {
-      border: 0px;
-      width: 20px;
-      text-align: center;
-    }
+        td.cart {
+            font: bold italic 18px debby;
+            padding: 0px;
+        }
 
-    td.productPrice {
-      font: 16px debby;
-      padding: 0px;
-    }
+        img.cartImage {
+            width: 100px;
+        }
 
-    div.totalPrice {
-      text-align: right;
-      font: bold 20px debby;
-    }
+        input.buttonCount, .buttonDelete {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: rgb(247, 247, 247);
+            outline: none;
+            opacity: 0.3;
+        }
 
-    form {
-      width: 100%;
-      margin: auto;
-      text-align: center;
-    }
+        input.buttonCount:hover, .buttonDelete:hover {
+            opacity: 1;
+        }
 
-    div.input {
-      text-align: left;
-    }
+        input.numberCount {
+            border: 0px;
+            width: 20px;
+            text-align: center;
+            background-color: rgba(247, 247, 247);
+            outline:none;
+        }
 
-    input.name, .email, .phone {
-      width: 100%;
-      padding: 12px 20px;
-      margin-bottom: 10px;
-      border: 1px solid black;
-    }
+        td.productPrice {
+            font: 16px debby;
+        }
 
-    input:focus {
-      border: 1px solid white;
-    }
+        div.totalPrice {
+            text-align: right;
+            font: bold 20px debby;
+        }
 
-    button.cancel, .next {
-      color: white;
-      font-weight: bold;
-      border: 5px solid #f64ca2;
-      border-radius: 20px;
-      background-color: black;
-      padding: 10px;
-      width: 150px;
-      margin-top: 20px;
-    }
+        form {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
 
-    .ui-widget.cartDialog {
-      font-family: Verdana,Arial,sans-serif;
-      font-size: .8em;
-    }
+        div.input {
+            text-align: left;
+        }
 
-    .ui-widget-content.cartDialog {
-      background: #F9F9F9;
-      border: 1px solid rgba(144, 217, 63, 0);
-      color: #222222;
-    }
+        input.name, .email, .phone {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
 
-    .ui-dialog.cartDialog {
-      left: 0;
-      outline: 0 none;
-      padding: 0 !important;
-      position: absolute;
-      top: 0;
-    }
+        input.name:focus, .email:focus, .phone:focus {
+            border: 1px solid white;
+        }
 
-    .ui-dialog.cartDialog .ui-dialog-content {
-      background: none repeat scroll 0 0 transparent;
-      border: 0 none;
-      overflow: auto;
-      position: relative;
-      padding: 0 !important;
-      margin: 0;
-    }
+        button.next {
+            color: white;
+            font-weight: bold;
+            border: 5px solid #f64ca2;
+            border-radius: 20px;
+            background-color: black;
+            padding: 10px;
+            width: 150px;
+            margin-top: 20px;
+            outline:none;
+            cursor: pointer;
+        }
 
-    .ui-dialog.cartDialog .ui-widget-header {
-      background: rgba(176, 222, 120, 0);
-      border: 0;
-      color: rgba(255, 255, 255, 0);
-      font-weight: normal;
-    }
+        button.next:focus {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
 
-    .ui-dialog.cartDialog .ui-dialog-titlebar {
-      padding: 0.1em .5em;
-      position: relative;
-      font-size: 1em;
-    }
+        .ui-widget.cartDialog {
+            font-family: Verdana,Arial,sans-serif;
+            font-size: .8em;
+        }
 
-    .ui-widget-overlay.override {
-      background: repeat-x scroll 50% 50% #222222;
-      opacity:0.5;
-      filter:Alpha(Opacity=50);
-    }
+        .ui-widget-content.cartDialog {
+            background: #F9F9F9;
+            border: 1px solid rgba(144, 217, 63, 0);
+            color: #222222;
+        }
 
+        .ui-dialog.cartDialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
 
-  </style>
+        .ui-dialog.cartDialog .ui-dialog-content {
+            background: none repeat scroll 0 0 transparent;
+            border: 0 none;
+            overflow: auto;
+            position: relative;
+            padding: 0 !important;
+            margin: 0;
+        }
+
+        .ui-dialog.cartDialog .ui-widget-header {
+            background: rgba(176, 222, 120, 0);
+            border: 0;
+            color: rgba(255, 255, 255, 0);
+            font-weight: normal;
+        }
+
+        .ui-dialog.cartDialog .ui-dialog-titlebar {
+            padding: 5px;
+            position: relative;
+        }
+
+        .ui-widget-overlay.override {
+            background: repeat-x scroll 50% 50% #222222;
+            opacity:0.5;
+            filter:Alpha(Opacity=50);
+        }
+
+    </style>
 </head>
 
 <body>
 <div class="category">
-  <div class="cartIcon">
-    <button class="cartIcon" onclick="cartClick()"></button>
-  </div>
-  <div class="categoryName">
-    MILK SHAKE
-  </div>
-  <div class="categoryDescription">
-    Италия. Натуральная косметика за основу которой взяты молочные протеины, аминокислоты йогурта и фруктовые экстракты
-  </div>
+    <div class="cartIcon">
+        <button class="cartIcon" onclick="cartClick()"></button>
+    </div>
+    <div class="categoryName">
+        MILK SHAKE
+    </div>
+    <div class="categoryDescription">
+        Италия. Натуральная косметика за основу которой взяты молочные протеины, аминокислоты йогурта и фруктовые экстракты
+    </div>
 </div>
 
 <div id="goods_table_div" class="goods">
-  <table>
-    <tbody></tbody>
-  </table>
+    <table>
+        <tbody></tbody>
+    </table>
 </div>
 
 <script>
 
-  getGoods()
+    getGoods()
 </script>
 
 </body>

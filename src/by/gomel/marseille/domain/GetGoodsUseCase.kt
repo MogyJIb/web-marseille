@@ -12,7 +12,7 @@ class GetGoodsUseCase(
 
     operator fun invoke(): List<Goods> {
         val listType = object : TypeToken<List<Goods>>() { }.type
-        return gson.fromJson<List<Goods>>(File(this::class.java.classLoader.getResource("fakeGoods.json").toURI()).readText(), listType)
+        return gson.fromJson<List<Goods>>(File(this::class.java.classLoader.getResource("goods.json").toURI()).readText(), listType)
     }
 
 }

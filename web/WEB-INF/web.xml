@@ -6,11 +6,38 @@
 
     <servlet>
         <servlet-name>GoodsServlet</servlet-name>
-        <servlet-class>by.gomel.marseille.GoodsServlet</servlet-class>
+        <servlet-class>by.gomel.marseille.presentation.GoodsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GoodsServlet</servlet-name>
         <url-pattern>/goods</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <servlet-class>by.gomel.marseille.presentation.EmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <url-pattern>/employees</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CompanyAboutServlet</servlet-name>
+        <servlet-class>by.gomel.marseille.presentation.CompanyAboutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompanyAboutServlet</servlet-name>
+        <url-pattern>/company_about</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicesServlet</servlet-name>
+        <servlet-class>by.gomel.marseille.presentation.ServicesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesServlet</servlet-name>
+        <url-pattern>/services</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -67,10 +67,6 @@ function updateTotalPrice() {
     totalPrice.innerText = amount + "";
 }
 
-function cancelDialog() {
-    $(this).closest('.ui-dialog-content').dialog('close');
-}
-
 function nextDialog() {
     $(this).closest('.ui-dialog-content').dialog('close');
     alert("Данные успешно отправлены")
@@ -81,7 +77,7 @@ var row = function (good) {
     var name = good.name;
     return "<tr>" +
         "<td>" +
-        "<div class=\"imageUrl\"> <img src=\"" + good.imageUrl + "\"> </div>" +
+        "<div> <img src=\"" + good.imageUrl + "\"> </div>" +
         "</td>" +
         "<td>" +
         "<div class=\"name\">" + good.name + "</div>" +
@@ -101,7 +97,7 @@ var cartRow = function (cartV) {
     var count = cartV.count;
     return         '<tr class="cartTr" id="'+name+'_tr">' +
         '    <td class="cartTd">' +
-        '        <img class="cartImg" id="'+name+'_image" src=\"' + good.imageUrl + '\">' +
+        '        <img class="cartImage" id="'+name+'_image" src=\"' + good.imageUrl + '\">' +
         '    </td>' +
         '    <td class="cartTd">' +
         good.name +
@@ -147,27 +143,26 @@ function cartClick() {
         '        <div class="input">\n' +
         '            <div>\n' +
         '                <label for="name">Имя</label>\n' +
-        '                <input type="text" class="name" ></input>\n' +
+        '                <input type="text" class="name" required></input>\n' +
         '            </div>\n' +
         '            <div>\n' +
         '                <label for="email">Email</label>\n' +
-        '                <input type="email" class="email" ></input>\n' +
+        '                <input type="email" class="email" required></input>\n' +
         '            </div>\n' +
         '            <div>\n' +
         '                <label for="phone">Телефон</label>\n' +
-        '                <input type="text" class="phone" ></input>\n' +
+        '                <input type="text" class="phone" required></input>\n' +
         '            </div>\n' +
         '        </div>\n' +
         '        <div>\n' +
-        '            <button class="cancel" onclick="cancelDialog()">Отмена</button>\n' +
         '            <button class="next" onclick="nextDialog()">Продолжить</button>\n' +
         '        </div>\n' +
         '    </form>\n' +
         '\n' +
         '\n' +
         '</div>\n').dialog({
-        height: 600,
-        width: 1000,
+        width: 650,
+        position: 'center',
         modal: true,
         resizable: false,
         dialogClass: 'cartDialog',

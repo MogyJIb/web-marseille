@@ -1,0 +1,20 @@
+[
+	{
+		"category":"HAIR",
+        "name":"Юля Башилова",
+        "position": "Парикмахер",
+        "imageUrl":"https://static.tildacdn.com/tild3439-3738-4664-b962-313965393065/IMG_3483.JPG"
+	},
+    {
+        "category": "HAIR",
+        "name": "Ирина Якименко",
+        "position": "Парикмахер",
+        "imageUrl": "https://static.tildacdn.com/tild3965-3562-4531-a235-626432303533/IMG_3876.JPG"
+    },
+    {
+        "category": "MANICURE",
+        "name": "Олеся Булах",
+        "position": "Мастер ногтевого сервиса",
+        "imageUrl": "https://static.tildacdn.com/tild6565-6264-4238-b133-323465656134/IMG_3301.JPG"
+    }
+]
